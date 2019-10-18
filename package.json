@@ -1,0 +1,33 @@
+{
+  "name": "vuepress-plugin-cursor-effects",
+  "version": "0.0.1",
+  "description": "Add a lovely cursor effects in your vuepress!",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/SigureMo/vuepress-plugin-cursor-effects.git"
+  },
+  "keywords": [
+    "vuepress",
+    "plugin",
+    "cursor",
+    "effects"
+  ],
+  "files": [
+    "index.js",
+    "boom.js",
+    "CursorEffects.vue",
+	  "enhanceAppFile.js",
+    "package.json",
+    "README.md"
+	],
+  "author": "SigureMo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SigureMo/vuepress-plugin-cursor-effects/issues"
+  },
+  "homepage": "https://github.com/SigureMo/vuepress-plugin-cursor-effects#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
