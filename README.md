@@ -8,7 +8,7 @@
    <a href="https://github.com/SigureMo/vuepress-plugin-cursor-effects/blob/master/LICENSE" target="_blank"><img alt="GitHub license" src="https://img.shields.io/github/license/SigureMo/vuepress-plugin-cursor-effects"></a>
 </p>
 
-- Website: [www.sigure.xyz/vuepress-plugin-ribbon/](https://www.sigure.xyz/vuepress-plugin-ribbon/)
+- Website: [www.sigure.xyz/vuepress-lovely-plugins/](https://www.sigure.xyz/vuepress-lovely-plugins/)
 - MyBlog: [www.sigure.xyz](https://www.sigure.xyz/)
 
 ## Install

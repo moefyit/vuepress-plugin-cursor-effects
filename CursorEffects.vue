@@ -45,7 +45,7 @@
         style.position = 'fixed'
         style.top = 0
         style.left = 0
-        style.zIndex = '999'
+        style.zIndex = '99999999'
         style.pointerEvents = 'none'
         style.width = this.globalWidth
         style.height = this.globalHeight
