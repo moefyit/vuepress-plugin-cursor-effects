@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-cursor-effects",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Add a lovely cursor effects in your vuepress!",
   "main": "index.js",
   "repository": {
@@ -15,9 +15,7 @@
   ],
   "files": [
     "index.js",
-    "boom.js",
-    "CursorEffects.vue",
-	  "enhanceAppFile.js",
+    "bin/",
     "package.json",
     "README.md"
 	],

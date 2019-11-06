@@ -3,11 +3,14 @@
 </template>
 
 <script>
-  import { Boom } from "./boom.js"
+  import { Boom } from "./assets/js/boom.js"
   export default {
     name: "CursorEffects",
     data() {
       return {
+        shape: EFFECTS_SHAPE,
+        size: EFFECTS_SIZE,
+        zIndex: EFFECTS_Z_INDEX,
         computerCanvas: null,
         renderCanvas: null,
         computerContext: null,
@@ -37,15 +40,15 @@
         this.renderCanvas.width = this.computerCanvas.width = this.globalWidth
         this.renderCanvas.height = this.computerCanvas.height = this.globalHeight
 
-        window.addEventListener('mousedown', this.handleMouseDown.bind(this))
-        window.addEventListener('pagehide', this.handlePageHide.bind(this))
+        window.addEventListener('mousedown', this.handleMouseDown)
+        window.addEventListener('pagehide', this.handlePageHide)
       },
 
       setStyle(style) {
         style.position = 'fixed'
         style.top = 0
         style.left = 0
-        style.zIndex = '99999999'
+        style.zIndex = this.zIndex
         style.pointerEvents = 'none'
         style.width = this.globalWidth
         style.height = this.globalHeight
@@ -55,6 +58,8 @@
         const boom = new Boom({
           origin: { x: e.clientX, y: e.clientY },
           context: this.computerContext,
+          size: this.size,
+          shape: this.shape,
           area: {
             width: this.globalWidth,
             height: this.globalHeight
@@ -76,14 +81,15 @@
           return this.running = false
         }
 
-        requestAnimationFrame(this.run.bind(this))
+        requestAnimationFrame(this.run)
 
         this.computerContext.clearRect(0, 0, this.globalWidth, this.globalHeight)
         this.renderContext.clearRect(0, 0, this.globalWidth, this.globalHeight)
 
         this.booms.forEach((boom, index) => {
           if (boom.stop) {
-            return this.booms.splice(index, 1)
+            delete this.booms.splice(index, 1)
+            return
           }
           boom.move()
           boom.draw()

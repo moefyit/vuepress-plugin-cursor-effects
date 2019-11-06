@@ -27,6 +27,23 @@ module.exports = {
 }
 ```
 
+## Options
+
+``` js
+module.exports = {
+  plugins: [
+    [
+      "cursor-effects",
+      {
+        size: 2,                    // size of the particle, default: 2
+        shape: ['star'| 'circle'],  // shape of the particle, default: 'star'
+        zIndex: 999999999           // z-index property of the canvas, default: 999999999
+      }
+    ]
+  ]
+}
+```
+
 ## Thanks
 
 - [hexo-theme-sagiri](https://github.com/DIYgod/diygod.me/blob/master/themes/sagiri/src/cursor-effects.js)
