@@ -15,8 +15,8 @@
         renderCanvas: null,
         computerContext: null,
         renderContext: null,
-        globalWidth: 0,
-        globalHeight: 0
+        area: {width: 0, height: 0},
+        resizeTimeout: null
       }
     },
     mounted() {
@@ -26,8 +26,8 @@
       this.computerContext = this.computerCanvas.getContext('2d')
       this.renderContext = this.renderCanvas.getContext('2d')
 
-      this.globalWidth = window.innerWidth
-      this.globalHeight = window.innerHeight
+      this.area.width = window.innerWidth
+      this.area.height = window.innerHeight
 
       this.booms = []
       this.running = false
@@ -37,11 +37,12 @@
     methods: {
       init() {
         this.setStyle(this.renderCanvas.style)
-        this.renderCanvas.width = this.computerCanvas.width = this.globalWidth
-        this.renderCanvas.height = this.computerCanvas.height = this.globalHeight
+        this.renderCanvas.width = this.computerCanvas.width = this.area.width
+        this.renderCanvas.height = this.computerCanvas.height = this.area.height
 
         window.addEventListener('mousedown', this.handleMouseDown)
         window.addEventListener('pagehide', this.handlePageHide)
+        window.addEventListener('resize', this.handleResize)
       },
 
       setStyle(style) {
@@ -50,8 +51,8 @@
         style.left = 0
         style.zIndex = this.zIndex
         style.pointerEvents = 'none'
-        style.width = this.globalWidth
-        style.height = this.globalHeight
+        style.width = this.area.width
+        style.height = this.area.height
       },
 
       handleMouseDown(e) {
@@ -60,10 +61,7 @@
           context: this.computerContext,
           size: this.size,
           shape: this.shape,
-          area: {
-            width: this.globalWidth,
-            height: this.globalHeight
-          }
+          area: this.area
         })
         boom.init()
         this.booms.push(boom)
@@ -75,6 +73,18 @@
         this.running = false
       },
 
+      handleResize() {
+        if(this.resizeTimeout != null){
+          clearTimeout(this.resizeTimeout);
+        }
+        this.resizeTimeout = setTimeout(() => {
+          this.area.width = window.innerWidth
+          this.area.height = window.innerHeight
+          this.renderCanvas.width = this.computerCanvas.width = this.area.width
+          this.renderCanvas.height = this.computerCanvas.height = this.area.height
+        }, 500)
+      },
+
       run() {
         this.running = true
         if (this.booms.length == 0) {
@@ -83,8 +93,8 @@
 
         requestAnimationFrame(this.run)
 
-        this.computerContext.clearRect(0, 0, this.globalWidth, this.globalHeight)
-        this.renderContext.clearRect(0, 0, this.globalWidth, this.globalHeight)
+        this.computerContext.clearRect(0, 0, this.area.width, this.area.height)
+        this.renderContext.clearRect(0, 0, this.area.width, this.area.height)
 
         this.booms.forEach((boom, index) => {
           if (boom.stop) {
@@ -94,7 +104,7 @@
           boom.move()
           boom.draw()
         })
-        this.renderContext.drawImage(this.computerCanvas, 0, 0, this.globalWidth, this.globalHeight)
+        this.renderContext.drawImage(this.computerCanvas, 0, 0, this.area.width, this.area.height)
       }
     }
   }
