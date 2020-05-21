@@ -1,11 +1,11 @@
 {
   "name": "vuepress-plugin-cursor-effects",
   "version": "0.0.4",
-  "description": "Use a lovely cursor effects in your vuepress!",
+  "description": "Add a cute click effect to your mouse in your vuepress!",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/SigureMo/vuepress-plugin-cursor-effects.git"
+    "url": "git+ssh://git@github.com/moefyit/vuepress-plugin-cursor-effects.git"
   },
   "keywords": [
     "vuepress",
@@ -22,9 +22,9 @@
   "author": "SigureMo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SigureMo/vuepress-plugin-cursor-effects/issues"
+    "url": "https://github.com/moefyit/vuepress-plugin-cursor-effects/issues"
   },
-  "homepage": "https://github.com/SigureMo/vuepress-plugin-cursor-effects#readme",
+  "homepage": "https://github.com/moefyit/vuepress-plugin-cursor-effects#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   }
