@@ -1,4 +1,6 @@
-# vuepress-plugin-cursor-effects
+# vuepress-plugin-cursor-effects <GitHubLink repo="moefyit/vuepress-plugin-cursor-effects"/>
+
+:tada: Add a cute click effect to your mouse in your vuepress!
 
 <p align="center">
    <a href="https://www.npmjs.com/package/vuepress-plugin-cursor-effects" target="_blank"><img alt="npm" src="https://img.shields.io/npm/v/vuepress-plugin-cursor-effects.svg"></a>
