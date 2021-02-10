@@ -1,7 +1,5 @@
-import CursorEffects from "./CursorEffects.vue";
+import CursorEffects from './CursorEffects.vue'
 
-export default ({
-  Vue
-}) => {
-  Vue.component("CursorEffects", CursorEffects);
-};
+export default ({ Vue }) => {
+  Vue.component('CursorEffects', CursorEffects)
+}

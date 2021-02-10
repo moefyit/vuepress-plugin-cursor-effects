@@ -10,12 +10,12 @@
    <a href="https://github.com/moefyit/vuepress-plugin-cursor-effects/blob/master/LICENSE" target="_blank"><img alt="GitHub license" src="https://img.shields.io/github/license/moefyit/vuepress-plugin-cursor-effects"></a>
 </p>
 
-- Document: [moefy-vuepress](https://moefyit.github.io/moefy-vuepress/)
-- LiveDemo: [notev](https://www.sigure.xyz/)
+-  Document: [moefy-vuepress](https://moefyit.github.io/moefy-vuepress/)
+-  LiveDemo: [notev](https://www.sigure.xyz/)
 
 ## Install
 
-``` bash
+```bash
 yarn add vuepress-plugin-cursor-effects -D
 # or use npm
 npm i vuepress-plugin-cursor-effects -D
@@ -23,29 +23,29 @@ npm i vuepress-plugin-cursor-effects -D
 
 ## Usage
 
-``` javascript
+```javascript
 module.exports = {
-  plugins: ['cursor-effects']
+   plugins: ['cursor-effects'],
 }
 ```
 
 ## Options
 
-``` js
+```js
 module.exports = {
-  plugins: [
-    [
-      "cursor-effects",
-      {
-        size: 2,                    // size of the particle, default: 2
-        shape: ['star'| 'circle'],  // shape of the particle, default: 'star'
-        zIndex: 999999999           // z-index property of the canvas, default: 999999999
-      }
-    ]
-  ]
+   plugins: [
+      [
+         'cursor-effects',
+         {
+            size: 2, // size of the particle, default: 2
+            shape: ['star' | 'circle'], // shape of the particle, default: 'star'
+            zIndex: 999999999, // z-index property of the canvas, default: 999999999
+         },
+      ],
+   ],
 }
 ```
 
 ## Thanks
 
-- [hexo-theme-sagiri](https://github.com/DIYgod/diygod.me/blob/master/themes/sagiri/src/cursor-effects.js)
+-  [hexo-theme-sagiri](https://github.com/DIYgod/diygod.me/blob/master/themes/sagiri/src/cursor-effects.js)
