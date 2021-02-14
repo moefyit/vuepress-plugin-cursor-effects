@@ -15,7 +15,7 @@ export default {
       renderCanvas: null,
       computerContext: null,
       renderContext: null,
-      area: { width: 0, height: 0 },
+      clientSize: { width: 0, height: 0 },
       resizeTimeout: null,
     }
   },
@@ -26,8 +26,8 @@ export default {
     this.computerContext = this.computerCanvas.getContext('2d')
     this.renderContext = this.renderCanvas.getContext('2d')
 
-    this.area.width = window.innerWidth
-    this.area.height = window.innerHeight
+    this.clientSize.width = window.innerWidth
+    this.clientSize.height = window.innerHeight
 
     this.booms = []
     this.running = false
@@ -37,8 +37,8 @@ export default {
   methods: {
     init() {
       this.setStyle(this.renderCanvas.style)
-      this.renderCanvas.width = this.computerCanvas.width = this.area.width
-      this.renderCanvas.height = this.computerCanvas.height = this.area.height
+      this.renderCanvas.width = this.computerCanvas.width = this.clientSize.width
+      this.renderCanvas.height = this.computerCanvas.height = this.clientSize.height
       this.makeHighRes(this.renderCanvas, this.renderContext)
       this.makeHighRes(this.computerCanvas, this.computerContext)
 
@@ -53,8 +53,8 @@ export default {
       style.left = 0
       style.zIndex = this.zIndex
       style.pointerEvents = 'none'
-      style.width = this.area.width
-      style.height = this.area.height
+      style.width = this.clientSize.width
+      style.height = this.clientSize.height
     },
 
     makeHighRes(canvas, ctx) {
@@ -77,7 +77,7 @@ export default {
         context: this.computerContext,
         size: this.size,
         shape: this.shape,
-        area: this.area,
+        clientSize: this.clientSize,
       })
       boom.init()
       this.booms.push(boom)
@@ -94,10 +94,10 @@ export default {
         clearTimeout(this.resizeTimeout)
       }
       this.resizeTimeout = setTimeout(() => {
-        this.area.width = window.innerWidth
-        this.area.height = window.innerHeight
-        this.renderCanvas.width = this.computerCanvas.width = this.area.width
-        this.renderCanvas.height = this.computerCanvas.height = this.area.height
+        this.clientSize.width = window.innerWidth
+        this.clientSize.height = window.innerHeight
+        this.renderCanvas.width = this.computerCanvas.width = this.clientSize.width
+        this.renderCanvas.height = this.computerCanvas.height = this.clientSize.height
         this.makeHighRes(this.renderCanvas, this.renderContext)
         this.makeHighRes(this.computerCanvas, this.computerContext)
       }, 500)
@@ -111,8 +111,8 @@ export default {
 
       requestAnimationFrame(this.run)
 
-      this.computerContext.clearRect(0, 0, this.area.width, this.area.height)
-      this.renderContext.clearRect(0, 0, this.area.width, this.area.height)
+      this.computerContext.clearRect(0, 0, this.clientSize.width, this.clientSize.height)
+      this.renderContext.clearRect(0, 0, this.clientSize.width, this.clientSize.height)
 
       this.booms.forEach((boom, index) => {
         if (boom.stop) {
@@ -122,7 +122,13 @@ export default {
         boom.move()
         boom.draw()
       })
-      this.renderContext.drawImage(this.computerCanvas, 0, 0, this.area.width, this.area.height)
+      this.renderContext.drawImage(
+        this.computerCanvas,
+        0,
+        0,
+        this.clientSize.width,
+        this.clientSize.height
+      )
     },
   },
 }

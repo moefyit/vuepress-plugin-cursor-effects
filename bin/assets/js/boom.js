@@ -60,13 +60,13 @@ class Star extends Particle {
 }
 
 class Boom {
-  constructor({ origin, context, shape = 'star', size = 2, particleCount = 10, area }) {
+  constructor({ origin, context, shape = 'star', size = 2, particleCount = 10, clientSize }) {
     this.origin = origin
     this.context = context
     this.shape = shape
     this.size = size
     this.particleCount = particleCount
-    this.area = area
+    this.clientSize = clientSize
     this.stop = false
     this.particles = []
   }
@@ -121,10 +121,10 @@ class Boom {
     this.particles.forEach((particle, index) => {
       if (
         particle.position.x < 0 ||
-        particle.position.x > this.area.width ||
-        particle.position.y > this.area.height
+        particle.position.x > this.clientSize.width ||
+        particle.position.y > this.clientSize.height
       ) {
-        delete this.particles.splice(index, 1)
+        this.particles.splice(index, 1)
         return
       }
       particle.move()
