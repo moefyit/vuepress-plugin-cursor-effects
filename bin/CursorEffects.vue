@@ -39,6 +39,8 @@ export default {
       this.setStyle(this.renderCanvas.style)
       this.renderCanvas.width = this.computerCanvas.width = this.area.width
       this.renderCanvas.height = this.computerCanvas.height = this.area.height
+      this.makeHighRes(this.renderCanvas, this.renderContext)
+      this.makeHighRes(this.computerCanvas, this.computerContext)
 
       window.addEventListener('mousedown', this.handleMouseDown)
       window.addEventListener('pagehide', this.handlePageHide)
@@ -53,6 +55,20 @@ export default {
       style.pointerEvents = 'none'
       style.width = this.area.width
       style.height = this.area.height
+    },
+
+    makeHighRes(canvas, ctx) {
+      const dpr = window.devicePixelRatio || 1
+
+      const oldWidth = canvas.width
+      const oldHeight = canvas.height
+
+      canvas.width = Math.round(oldWidth * dpr)
+      canvas.height = Math.round(oldHeight * dpr)
+      canvas.style.width = oldWidth + 'px'
+      canvas.style.height = oldHeight + 'px'
+
+      ctx.scale(dpr, dpr)
     },
 
     handleMouseDown(e) {
@@ -82,6 +98,8 @@ export default {
         this.area.height = window.innerHeight
         this.renderCanvas.width = this.computerCanvas.width = this.area.width
         this.renderCanvas.height = this.computerCanvas.height = this.area.height
+        this.makeHighRes(this.renderCanvas, this.renderContext)
+        this.makeHighRes(this.computerCanvas, this.computerContext)
       }, 500)
     },
 
@@ -98,7 +116,7 @@ export default {
 
       this.booms.forEach((boom, index) => {
         if (boom.stop) {
-          delete this.booms.splice(index, 1)
+          this.booms.splice(index, 1)
           return
         }
         boom.move()
