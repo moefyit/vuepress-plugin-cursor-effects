@@ -11,7 +11,7 @@
 </p>
 
 -  Document: [moefy-vuepress](https://moefyit.github.io/moefy-vuepress/)
--  LiveDemo: [notev](https://www.sigure.xyz/)
+-  LiveDemo: [notev](https://nyakku.moe/)
 
 ## Install
 

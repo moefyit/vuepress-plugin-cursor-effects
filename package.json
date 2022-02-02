@@ -19,13 +19,10 @@
     "package.json",
     "README.md"
   ],
-  "author": "SigureMo",
+  "author": "Nyakku Shigure",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/moefyit/vuepress-plugin-cursor-effects/issues"
   },
-  "homepage": "https://github.com/moefyit/vuepress-plugin-cursor-effects#readme",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
+  "homepage": "https://github.com/moefyit/vuepress-plugin-cursor-effects#readme"
 }
