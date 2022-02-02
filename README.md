@@ -11,7 +11,9 @@
 </p>
 
 -  Document: [moefy-vuepress](https://moefyit.github.io/moefy-vuepress/)
--  LiveDemo: [notev](https://nyakku.moe/)
+-  Live demo: [notev](https://nyakku.moe/)
+
+> Want to use it outside of VuePress? Try [moefy-canvas](https://github.com/moefyit/moefy-canvas)!
 
 ## Install
 
