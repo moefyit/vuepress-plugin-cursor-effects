@@ -11,6 +11,6 @@ module.exports = (options = {}, context) => ({
     }
   },
 
-  enhanceAppFiles: resolve(__dirname, './bin/enhanceAppFile.js'),
+  enhanceAppFiles: resolve(__dirname, './lib/enhanceAppFile.js'),
   globalUIComponents: 'CursorEffects',
 })
