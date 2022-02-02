@@ -7,7 +7,7 @@
    <a href="https://github.com/moefyit/vuepress-plugin-cursor-effects/stargazers" target="_blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/moefyit/vuepress-plugin-cursor-effects"></a>
    <a href="https://www.npmjs.com/package/vuepress-plugin-cursor-effects" target="_blank"><img alt="downloads" src="https://img.shields.io/npm/dt/vuepress-plugin-cursor-effects.svg"></a>
    <a href="https://www.npmjs.com/package/vuepress-plugin-cursor-effects" target="_blank"><img alt="downloads" src="https://img.shields.io/npm/dm/vuepress-plugin-cursor-effects.svg"></a>
-   <a href="https://github.com/moefyit/vuepress-plugin-cursor-effects/blob/master/LICENSE" target="_blank"><img alt="GitHub license" src="https://img.shields.io/github/license/moefyit/vuepress-plugin-cursor-effects"></a>
+   <a href="https://github.com/moefyit/vuepress-plugin-cursor-effects/blob/main/LICENSE" target="_blank"><img alt="GitHub license" src="https://img.shields.io/github/license/moefyit/vuepress-plugin-cursor-effects"></a>
 </p>
 
 -  Document: [moefy-vuepress](https://moefyit.github.io/moefy-vuepress/)
