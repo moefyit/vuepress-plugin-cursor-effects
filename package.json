@@ -26,6 +26,6 @@
   },
   "homepage": "https://github.com/moefyit/vuepress-plugin-cursor-effects#readme",
   "dependencies": {
-    "@moefy-canvas/theme-popper": "^0.3.0"
+    "@moefy-canvas/theme-popper": "^0.3.1"
   }
 }
